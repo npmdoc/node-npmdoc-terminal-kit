@@ -1,1 +1,39 @@
-{     "devDependencies": {         "terminal-kit": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-terminal-kit",     "homepage": "https://github.com/npmdoc/node-npmdoc-terminal-kit",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-terminal-kit.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [terminal-kit (v1.4.1)](https://github.com/cronvel/terminal-kit#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-terminal-kit.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-terminal-kit) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-terminal-kit.svg)](https://travis-ci.org/npmdoc/node-npmdoc-terminal-kit)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "terminal-kit": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-terminal-kit",
+    "keywords": [
+        "documentation",
+        "terminal-kit"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_terminal_kit.js",
+    "name": "npmdoc-terminal-kit",
+    "nameAlias": "npmdoc_terminal_kit",
+    "nameOriginal": "npmdoc-terminal-kit",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-terminal-kit.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
